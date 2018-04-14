@@ -41,13 +41,15 @@ namespace play
         private async void Button_Click_2(object sender, RoutedEventArgs e)
         {
             StorageFile LoadFile = await Load();
-            MediaPlayer MyMediaPlayer = new MediaPlayer();
+           // MediaPlayer MyMediaPlayer = new MediaPlayer();
             if (LoadFile != null)
             {
-                var mediaSource = MediaSource.CreateFromStorageFile(LoadFile);
-                MyMediaPlayer.Source = mediaSource;
-                MyMedia.SetMediaPlayer(MyMediaPlayer);
-                MyMediaPlayer.Play();
+               // var mediaSource = MediaSource.CreateFromStorageFile(LoadFile);
+                var stream = await LoadFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
+               // MyMediaPlayer.Source = mediaSource;
+                MyMedia.SetSource(stream, LoadFile.ContentType);
+                //MyMedia.SetMediaPlayer(MyMediaPlayer);
+                MyMedia.Play();
             }
         }
 

@@ -9,16 +9,19 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-
-        <Button Content="下载" Margin="24, 0" Click="Button_Click_2"/>
-            <Image x:Name="img" Margin="100" Height="350"  Width="600" Source="Assets/hb.jpg" Opacity="1" />
-            <MediaPlayerElement Name="MyMedia"
+            <Button Content="下载"  Click="Button_Click_2"/>
+            <Grid>
+                
+                <Image x:Name="img" VerticalAlignment="Center" HorizontalAlignment="Center"  Height="350"  Width="600" Source="Assets/gd.jpg" Opacity="1" />
+                <MediaElement Name="MyMedia"
                             Margin="12"
-                            IsEnabled="True"
-                            AutoPlay="False"
-			                AreTransportControlsEnabled="True"
-                            Grid.Column="1">
-            </MediaPlayerElement>
+                            VerticalAlignment="Center" HorizontalAlignment="Center"
+                           AutoPlay="false"
+                           Width="600"
+                           Height="600"
+			               AreTransportControlsEnabled="True">  
+                </MediaElement>
+            </Grid>
         </StackPanel>
     </Grid>
 </Page>
