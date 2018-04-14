@@ -12,7 +12,7 @@
             <Button Content="下载"  Click="Button_Click_2"/>
             <Grid>
                 
-                <Image x:Name="img" VerticalAlignment="Center" HorizontalAlignment="Center"  Height="350"  Width="600" Source="Assets/gd.jpg" Opacity="1" />
+                <Image x:Name="img" VerticalAlignment="Center" HorizontalAlignment="Center"  Height="350"  Width="600" Source="Assets/hb.jpg" Opacity="1" />
                 <MediaElement Name="MyMedia"
                             Margin="12"
                             VerticalAlignment="Center" HorizontalAlignment="Center"
