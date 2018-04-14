@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="play.yy"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:play"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <MediaElement  Name="mediaPlayer"
+               VerticalAlignment="Center" HorizontalAlignment="Center"
+               AutoPlay="false"
+               AreTransportControlsEnabled="True"
+               Width="600"
+               Height="600"
+               Source="Assets/jj.mp3">
+            <MediaElement.TransportControls>
+                <MediaTransportControls IsCompact="False"/>
+            </MediaElement.TransportControls>
+        </MediaElement>
+        <Image x:Name="img" VerticalAlignment="Center" HorizontalAlignment="Center"  Height="350"  Width="600" Source="Assets/gd.jpg" Opacity="1" />
+        
+    </Grid>
+</Page>

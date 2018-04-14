@@ -1,13 +1,72 @@
-﻿<Page
-    x:Class="play.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:play"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+﻿<Page  
+    x:Class="play.MainPage"  
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+    xmlns:local="using:Play"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
     mc:Ignorable="d">
+ 
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <SplitView Name="MenuSplitView"  
+                   Grid.Column="0"  
+                   DisplayMode="CompactOverlay"  
+                   OpenPaneLength="200"  
+                   CompactPaneLength="48"  
+                   HorizontalAlignment="Left"  
+                   BorderBrush="AliceBlue">
+            <SplitView.Pane>
+                <StackPanel Orientation="Vertical" >
+                    <Button Name="ListBtn"   
+                            Background="LightGray"   
+                            FontFamily="Segoe MDL2 Assets"  
+                            Content=""   
+                            FontSize="28"     
+                            HorizontalAlignment="Left" 
+                            Click="ListBtn_Click" />
+                    <ListBox Name="MenuListBox"
+                             SelectionChanged="ListBox_SelectionChanged"
+                             SelectionMode="Single">
+                        <ListBoxItem Name="FindListBoxItem" >
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Zoom" Foreground="Gray" />
+                                <TextBlock Text="搜索" Margin="24, 0" />
+                                <Button Content="在线" Click="Button_Click"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="RecommendListBoxItem">
+                            <StackPanel Orientation="Horizontal">
+                                <Rectangle Fill="Red" Height="43" Width="2" Margin="-12" HorizontalAlignment="Left"/>
+                                <SymbolIcon Symbol="Audio" Foreground="Gray" />
+                                <TextBlock Text="发现音乐" Margin="24, 0"/>
+                                <Button Content="本地" Click="Button_Click_1"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="VideoListBoxItem">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="SlideShow" Foreground="Gray" />
+                                <TextBlock Text="MV" Margin="24, 0"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="MomentsListBoxItem">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Download" Foreground="Gray" />
+                                <TextBlock Text="下载音乐" Margin="24, 0"/>
+
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame Name="MyFrame" x:FieldModifier="Public" ></Frame>
+            </SplitView.Content>
+        </SplitView>
     </Grid>
-</Page>
+</Page> 
